@@ -123,9 +123,6 @@ Fixora mengisi celah ini dengan tiga diferensiasi kunci:
   <em>Open Data & Transparansi — Dashboard akuntabilitas publik dan audit integritas 3 sumber data resmi</em>
 </p>
 
-### Video Demo
-
-**[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
 
 ---
 
