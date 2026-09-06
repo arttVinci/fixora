@@ -192,6 +192,35 @@ github.com/mmcdole/gofeed             v1.4.0
 
 ## 🏗️ Arsitektur Sistem
 
+Backend Fixora dibangun dengan pendekatan **Modular Monolith** (bukan microservices). Seluruh fitur berada dalam satu binary Go yang di-deploy sebagai satu proses, namun dipisahkan secara ketat menjadi modul-modul berdomain sendiri.
+
+### Mengapa Modular Monolith?
+
+| Aspek | Penjelasan |
+|-------|------------|
+| **Satu deployment** | Seluruh modul (`report`, `region`, `verification`, `crawl`) berjalan dalam satu binary — tidak ada overhead jaringan antar-modul |
+| **Batas domain jelas** | Setiap modul mengikuti Clean Architecture: `controller` → `usecase` → `repository` → `entity` |
+| **Komunikasi antar-modul via interface** | Modul tidak saling import langsung; mereka berkomunikasi melalui kontrak `*-client` (mis. `report-client`, `region-client`) |
+| **Migrasi independen** | Setiap modul punya `Migrate()` sendiri dan menjalankan auto-migrate tabelnya masing-masing |
+| **Mudah dievolusi** | Modul bisa dipecah menjadi service terpisah di kemudian hari tanpa menulis ulang domain logic |
+
+```mermaid
+flowchart TB
+    subgraph App["Single Go Binary (Fiber)"]
+        direction LR
+        RPT[report module]
+        REG[region module]
+        VRF[verification module]
+        CRL[crawl module]
+    end
+
+    RPT -->|"report-client"| REG
+    RPT -->|"verification-client"| VRF
+    CRL -->|"report-client"| RPT
+    CRL -->|"region-client"| REG
+    VRF -->|"report-client"| RPT
+```
+
 ### System Architecture
 
 ```mermaid
@@ -277,7 +306,7 @@ fixora/
 └── backend-Fixora/                  # Backend Go + Fiber
     ├── cmd/web/                     # Entrypoint (main.go)
     ├── internal/
-    │   ├── modules/                 # Feature modules (Clean Architecture)
+    │   ├── modules/                 # Feature modules (Modular Monolith)
     │   │   ├── report/              #   Inti: CRUD, peta, CV classifier
     │   │   ├── region/              #   Hierarki wilayah Indonesia
     │   │   ├── verification/        #   Multi-agent AI verification
