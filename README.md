@@ -320,7 +320,7 @@ erDiagram
     verification_sessions ||--o{ verification_logs : "logged"
 ```
 
-> Lihat skema lengkap di [`backend-Fixora/docs/DATABASE-SCHEMA.md`](backend-Fixora/docs/DATABASE-SCHEMA.md).
+> Lihat skema lengkap di [DATABASE-SCHEMA.md](https://github.com/arttVinci/fixora-Backend/blob/main/docs/DATABASE-SCHEMA.md).
 
 ### Folder Structure
 
@@ -357,8 +357,8 @@ Proyek Fixora terbagi ke dalam dua repositori utama: **Backend** (API & Multi-Ag
 
 | Komponen | Repositori | Panduan Setup | Deskripsi Singkat |
 |----------|------------|---------------|-------------------|
-| **Backend** | [`arttVinci/fixora-Backend`](https://github.com/arttVinci/fixora-Backend) | [README Backend](backend-Fixora/README.md) | Go 1.25, Fiber v2, Docker Compose, MySQL 8, migrasi database, dan konfigurasi API key AI (Gemini / Cloudinary) |
-| **Frontend** | [`arttVinci/fixora-Frontend`](https://github.com/arttVinci/fixora-Frontend) | [README Frontend](frontend-Fixora/README.md) | React 19, Vite, TypeScript, Tailwind CSS, Leaflet Map, dan konfigurasi base URL API |
+| **Backend** | [`arttVinci/fixora-Backend`](https://github.com/arttVinci/fixora-Backend) | [README Backend](https://github.com/arttVinci/fixora-Backend/blob/main/README.md) | Go 1.25, Fiber v2, Docker Compose, MySQL 8, migrasi database, dan konfigurasi API key AI (Gemini / Cloudinary) |
+| **Frontend** | [`arttVinci/fixora-Frontend`](https://github.com/arttVinci/fixora-Frontend) | [README Frontend](https://github.com/arttVinci/fixora-Frontend/blob/main/README.md) | React 19, Vite, TypeScript, Tailwind CSS, Leaflet Map, dan konfigurasi base URL API |
 
 ### Quick Start (Clone Repositori Monorepo)
 
@@ -371,8 +371,8 @@ cd fixora
 ```
 
 Setelah repositori terklon, buka panduan di masing-masing direktori:
-- **Setup Backend**: Buka direktori `backend-Fixora/` lalu ikuti panduan di [`backend-Fixora/README.md`](backend-Fixora/README.md).
-- **Setup Frontend**: Buka direktori `frontend-Fixora/` lalu ikuti panduan di [`frontend-Fixora/README.md`](frontend-Fixora/README.md).
+- **Setup Backend**: Buka direktori `backend-Fixora/` lalu ikuti panduan di [README Backend](https://github.com/arttVinci/fixora-Backend/blob/main/README.md).
+- **Setup Frontend**: Buka direktori `frontend-Fixora/` lalu ikuti panduan di [README Frontend](https://github.com/arttVinci/fixora-Frontend/blob/main/README.md).
 
 ---
 
@@ -471,7 +471,7 @@ const report = await fetch('/api/reports/', {
 });
 ```
 
-**Dokumentasi API lengkap (Swagger)**: jalankan backend lalu buka `http://localhost:8080/swagger/`, atau lihat [`backend-Fixora/docs/swagger.yaml`](backend-Fixora/docs/swagger.yaml).
+**Dokumentasi API lengkap (Swagger)**: jalankan backend lalu buka `http://localhost:8080/swagger/`, atau lihat [`swagger.yaml`](https://github.com/arttVinci/fixora-Backend/blob/main/docs/swagger.yaml).
 
 ---
 
