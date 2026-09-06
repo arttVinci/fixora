@@ -451,42 +451,6 @@ Setiap response API menggunakan format envelope JSON seragam:
 }
 ```
 
-### Contoh Integrasi (JavaScript Fetch)
-
-```javascript
-// 1. Mengambil titik laporan untuk peta interaktif
-const mapRes = await fetch(
-  '/api/reports/map?min_lat=-8.5&max_lat=-5.5&min_lng=105.5&max_lng=109.5'
-);
-const { data: markers } = await mapRes.json();
-
-// 2. Analisis foto kerusakan dengan AI Vision
-const formData = new FormData();
-formData.append('photo', photoFile);
-
-const analyzeRes = await fetch('/api/reports/analyze-photo', {
-  method: 'POST',
-  body: formData,
-});
-const { data: aiDraft } = await analyzeRes.json();
-
-// 3. Submit laporan warga menggunakan session foto staging
-const submitRes = await fetch('/api/reports', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    category_id: aiDraft.category_id,
-    title: aiDraft.title,
-    description: aiDraft.description,
-    latitude: -6.2349858,
-    longitude: 106.9945444,
-    severity: aiDraft.severity,
-    staging_session_id: aiDraft.session_id,
-    reporter_email: 'warga@example.com',
-  }),
-});
-```
-
 ---
 
 ## Lisensi
