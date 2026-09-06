@@ -421,21 +421,21 @@ Seluruh layanan backend Fixora menyediakan REST API berkecepatan tinggi dengan r
 #### 1. Laporan & Peta (Reports & Categories)
 
 | Method | Endpoint | Parameter / Payload | Deskripsi |
-| :---: | :--- | :--- | :--- |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/reports/map` | Query: `min_lat`, `max_lat`, `min_lng`, `max_lng`, `status`, `severity` | Mengambil data titik peta berbasis *bounding box* dan multi-filter |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/reports/:id` | Path: `:id` (UUID) | Detail lengkap laporan, foto, konfirmasi warga, dan laporan sekitar |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/reports/analyze-photo` | Multipart Form: `photo` (file) | Analisis foto via Gemini Vision AI (auto-fill kategori, keparahan, deskripsi) |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/reports` | JSON Body: `title`, `latitude`, `longitude`, `staging_session_id`, dll. | Membuat laporan kerusakan baru oleh warga |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/categories` | — | Mengambil seluruh daftar kategori kerusakan infrastruktur |
+|:---|:---|:---|:---|
+| `GET` | `/api/reports/map` | `min_lat`, `max_lat`, `min_lng`, `max_lng`, filter | Data titik peta berbasis *bounding box* dan filter status/severity |
+| `GET` | `/api/reports/:id` | `:id` (UUID) | Detail lengkap laporan, foto, konfirmasi warga, dan laporan terkait |
+| `POST` | `/api/reports/analyze-photo` | `photo` (multipart/form-data) | Analisis foto AI Vision (deteksi kategori, keparahan, deskripsi) |
+| `POST` | `/api/reports` | JSON payload | Submit laporan baru dari warga |
+| `GET` | `/api/categories` | — | Daftar seluruh kategori kerusakan infrastruktur |
 
 #### 2. Crawler & Verifikasi Multi-Agent (AI Pipeline)
 
 | Method | Endpoint | Parameter / Payload | Deskripsi |
-| :---: | :--- | :--- | :--- |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/trigger` | — | Memicu AI News Crawler secara manual di latar belakang |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/verify/trigger/:reportId` | Path: `:reportId` (UUID) | Menjalankan pipeline verifikasi multi-agent AI (Advocate, Skeptic, Manager) |
-| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/verify/retry/:sessionId` | Path: `:sessionId` (UUID) | Mengulang kembali sesi verifikasi yang mengalami error |
-| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/crawl/verify/sessions/:reportId` | Path: `:reportId` (UUID) | Mengambil riwayat sesi verifikasi beserta audit trail log agen AI |
+|:---|:---|:---|:---|
+| `POST` | `/api/crawl/trigger` | — | Trigger manual AI News Crawler di background |
+| `POST` | `/api/crawl/verify/trigger/:reportId` | `:reportId` (UUID) | Menjalankan pipeline verifikasi multi-agent (Advocate, Skeptic, Manager) |
+| `POST` | `/api/crawl/verify/retry/:sessionId` | `:sessionId` (UUID) | Mengulang kembali sesi verifikasi yang berstatus error |
+| `GET` | `/api/crawl/verify/sessions/:reportId` | `:reportId` (UUID) | Riwayat sesi verifikasi beserta audit log setiap agen AI |
 
 ### Format Response Standar
 
