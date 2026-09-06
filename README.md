@@ -405,73 +405,85 @@ Setelah repositori terklon, buka panduan di masing-masing direktori:
 
 ## API Documentation
 
-### Base URL
+Seluruh layanan backend Fixora menyediakan REST API berkecepatan tinggi dengan response envelope JSON standar.
 
+### Base URL & Interactive Docs
+
+| Lingkungan | Base URL | Swagger UI Interactive Docs |
+|------------|----------|-----------------------------|
+| **Production** | `https://api.portofy.net/api` | [Buka Swagger UI (Live)](https://api.portofy.net/swagger/index.html) |
+| **Development** | `http://localhost:8080/api` | [Buka Swagger UI (Local)](http://localhost:8080/swagger/index.html) |
+
+> Spesifikasi OpenAPI lengkap dapat diakses melalui file [`swagger.yaml`](https://github.com/arttVinci/fixora-Backend/blob/main/docs/swagger.yaml).
+
+### Daftar Endpoint
+
+#### 1. Laporan & Peta (Reports & Categories)
+
+| Method | Endpoint | Parameter / Payload | Deskripsi |
+| :---: | :--- | :--- | :--- |
+| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/reports/map` | Query: `min_lat`, `max_lat`, `min_lng`, `max_lng`, `status`, `severity` | Mengambil data titik peta berbasis *bounding box* dan multi-filter |
+| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/reports/:id` | Path: `:id` (UUID) | Detail lengkap laporan, foto, konfirmasi warga, dan laporan sekitar |
+| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/reports/analyze-photo` | Multipart Form: `photo` (file) | Analisis foto via Gemini Vision AI (auto-fill kategori, keparahan, deskripsi) |
+| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/reports` | JSON Body: `title`, `latitude`, `longitude`, `staging_session_id`, dll. | Membuat laporan kerusakan baru oleh warga |
+| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/categories` | — | Mengambil seluruh daftar kategori kerusakan infrastruktur |
+
+#### 2. Crawler & Verifikasi Multi-Agent (AI Pipeline)
+
+| Method | Endpoint | Parameter / Payload | Deskripsi |
+| :---: | :--- | :--- | :--- |
+| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/trigger` | — | Memicu AI News Crawler secara manual di latar belakang |
+| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/verify/trigger/:reportId` | Path: `:reportId` (UUID) | Menjalankan pipeline verifikasi multi-agent AI (Advocate, Skeptic, Manager) |
+| ![POST](https://img.shields.io/badge/POST-3B82F6?style=flat-square) | `/api/crawl/verify/retry/:sessionId` | Path: `:sessionId` (UUID) | Mengulang kembali sesi verifikasi yang mengalami error |
+| ![GET](https://img.shields.io/badge/GET-10B981?style=flat-square) | `/api/crawl/verify/sessions/:reportId` | Path: `:reportId` (UUID) | Mengambil riwayat sesi verifikasi beserta audit trail log agen AI |
+
+### Format Response Standar
+
+Setiap response API menggunakan format envelope JSON seragam:
+
+```json
+{
+  "data": { ... },
+  "message": "Pesan status respons",
+  "success": true
+}
 ```
-Development: http://localhost:8080/api
-Production:  https://api.portofy.net/api
-```
 
-### Endpoints
-
-#### Reports
-
-```http
-GET  /api/reports/map                  # Titik peta (bounding box + filter)
-GET  /api/reports/:id                  # Detail laporan + related reports
-POST /api/reports/analyze-photo        # CV classifier (multipart: photo)
-POST /api/reports/                     # Buat laporan warga
-GET  /api/categories/                  # Daftar kategori
-```
-
-#### Crawler
-
-```http
-POST /api/crawl/trigger                # Trigger crawler manual (background)
-```
-
-#### Verification
-
-```http
-POST /api/crawl/verify/trigger/:reportId   # Trigger verifikasi report
-POST /api/crawl/verify/retry/:sessionId    # Retry sesi verifikasi error
-GET  /api/crawl/verify/sessions/:reportId  # Daftar sesi verifikasi report
-```
-
-### Example Request
+### Contoh Integrasi (JavaScript Fetch)
 
 ```javascript
-// Ambil titik peta (bounding box Jawa Barat)
-const response = await fetch(
+// 1. Mengambil titik laporan untuk peta interaktif
+const mapRes = await fetch(
   '/api/reports/map?min_lat=-8.5&max_lat=-5.5&min_lng=105.5&max_lng=109.5'
 );
-const { data } = await response.json();
+const { data: markers } = await mapRes.json();
 
-// Submit laporan warga
-const form = new FormData();
-form.append('photo', file);
-const analyze = await fetch('/api/reports/analyze-photo', {
+// 2. Analisis foto kerusakan dengan AI Vision
+const formData = new FormData();
+formData.append('photo', photoFile);
+
+const analyzeRes = await fetch('/api/reports/analyze-photo', {
   method: 'POST',
-  body: form,
+  body: formData,
 });
+const { data: aiDraft } = await analyzeRes.json();
 
-const report = await fetch('/api/reports/', {
+// 3. Submit laporan warga menggunakan session foto staging
+const submitRes = await fetch('/api/reports', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
-    category_id: '...',
-    title: 'Jalan Berlubang di Jl. Ahmad Yani',
-    description: 'Lubang diameter 1 meter di jalur utama.',
+    category_id: aiDraft.category_id,
+    title: aiDraft.title,
+    description: aiDraft.description,
     latitude: -6.2349858,
     longitude: 106.9945444,
-    severity: 'sedang',
-    staging_session_id: '...',
+    severity: aiDraft.severity,
+    staging_session_id: aiDraft.session_id,
     reporter_email: 'warga@example.com',
   }),
 });
 ```
-
-**Dokumentasi API lengkap (Swagger)**: jalankan backend lalu buka `http://localhost:8080/swagger/`, atau lihat [`swagger.yaml`](https://github.com/arttVinci/fixora-Backend/blob/main/docs/swagger.yaml).
 
 ---
 
