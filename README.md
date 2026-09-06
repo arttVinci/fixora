@@ -8,6 +8,9 @@
 
 # Fixora — Infrastructure Neglect Tracker
 
+**Submission for ITECHNO CUP 2026 - Web Development**  
+**By Saya Akan Lawan**
+
 **Fixora** adalah platform open-source berbasis peta interaktif yang dirancang untuk melacak, memvisualisasikan, dan mendorong akuntabilitas terhadap kerusakan infrastruktur publik yang dibiarkan mangkrak di Indonesia.
 
 > _"Berapa lama jalan ini berlubang? Siapa yang bertanggung jawab? Apakah ada anggaran perbaikan?"_  
