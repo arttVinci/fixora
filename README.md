@@ -20,7 +20,6 @@
 
 ## Daftar Isi
 
-- [Tim Developer](#tim-developer)
 - [Tentang Proyek](#tentang-proyek)
 - [Fitur Unggulan](#fitur-unggulan)
 - [Demo & Screenshot](#demo--screenshot)
@@ -29,16 +28,9 @@
 - [Instalasi & Setup](#instalasi--setup)
 - [Penggunaan](#penggunaan)
 - [API Documentation](#api-documentation)
+- [Testing](#testing)
+- [Tim Developer](#tim-developer)
 - [Lisensi](#lisensi)
-
----
-
-## Tim Developer
-
-| Nama | Peran | GitHub |
-|------|-------|--------|
-| **[Putra Rizky Nugraha]** | Full-stack Developer | [GitHub](https://github.com/arttVinci) |
-| **[Muhammad Fadhil Sevano]** | Full-stack Developer | [GitHub](https://github.com/MFSevanoo) |
 
 ---
 
@@ -466,6 +458,45 @@ Setiap response API menggunakan format envelope JSON seragam:
 
 ---
 
+## Testing
+
+Pengujian dilakukan pada seluruh lapisan sistem (Frontend, Backend, dan Pipeline AI) untuk menjamin keandalan data, akurasi klasifikasi, dan kestabilan aplikasi saat dijalankan.
+
+### Menjalankan Pengujian
+
+```bash
+# 1. Frontend - Linting kode & validasi strict TypeScript
+cd frontend-Fixora
+npm run lint
+npm run build
+
+# 2. Backend - Pengujian unit test & validasi modul Go
+cd backend-Fixora
+go test -v ./...
+```
+
+### Lingkup Pengujian
+
+| Lapisan | Jenis Pengujian | Target yang Diuji | Status |
+|:---|:---|:---|:---:|
+| **Frontend** | Static Analysis & Type Checking | ESLint code quality, strict TypeScript typing (zero error), build bundler | Passed |
+| **Backend** | Unit & Validation Testing | Struct validation DTO, kalkulasi koordinat bounding box peta, database auto-migrate | Passed |
+| **AI Service** | Integration & Output Schema | Structured JSON output Gemini Vision, multi-agent verdict consensus | Passed |
+| **Integrasi** | Contract API Testing | Konsistensi response envelope `WebResponse[T]` via Swagger | Passed |
+
+---
+
+## Tim Developer
+
+**Saya Akan Lawan** — Submission for ITECHNO CUP 2026
+
+| Nama | Peran | GitHub |
+|------|-------|--------|
+| **[Putra Rizky Nugraha]** | Full-stack Developer | [GitHub](https://github.com/arttVinci) |
+| **[Muhammad Fadhil Sevano]** | Full-stack Developer | [GitHub](https://github.com/MFSevanoo) |
+
+---
+
 ## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail lebih lanjut.
@@ -474,6 +505,6 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 
 <div align="center">
 
-  **Fixora — Platform Transparansi & Akuntabilitas Infrastruktur Publik**
+  **Fixora — Dibuat oleh Tim Saya Akan Lawan untuk ITECHNO CUP 2026**
 
 </div>
