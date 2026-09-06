@@ -1,0 +1,6 @@
+[submodule "backend-Fixora"]
+	path = backend-Fixora
+	url = https://github.com/arttVinci/fixora-Backend.git
+[submodule "frontend-Fixora"]
+	path = frontend-Fixora
+	url = https://github.com/arttVinci/fixora-Frontend.git
