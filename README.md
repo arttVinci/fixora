@@ -93,19 +93,35 @@ Fixora mengisi celah ini dengan tiga diferensiasi kunci:
 
 ### Screenshot Aplikasi
 
-<div align="center">
-  <img src="[URL_SCREENSHOT_1]" alt="Homepage" width="800"/>
-  <p><em>Homepage - Landing page dengan statistik laporan</em></p>
+<p align="center">
+  <img src="docs/screenshots/01-homepage.png" alt="Beranda Fixora" width="100%" />
+  <br />
+  <em>Beranda — Landing page interaktif dengan statistik real-time dan asisten pelaporan AI</em>
+</p>
 
-  <img src="[URL_SCREENSHOT_2]" alt="Peta" width="800"/>
-  <p><em>Peta Interaktif - Marker cluster & filter kategori</em></p>
+<p align="center">
+  <img src="docs/screenshots/02-peta-interaktif.png" alt="Peta Interaktif" width="100%" />
+  <br />
+  <em>Peta Interaktif — Visualisasi geo-spasial titik laporan, filter multi-kategori, dan marker clustering</em>
+</p>
 
-  <img src="[URL_SCREENSHOT_3]" alt="Lapor Masalah" width="800"/>
-  <p><em>Lapor Masalah - AI Vision auto-fill kategori & severity</em></p>
+<p align="center">
+  <img src="docs/screenshots/03-popup-laporan.png" alt="Ringkasan Modal Laporan" width="100%" />
+  <br />
+  <em>Modal Laporan — Ringkasan kondisi kerusakan, status verifikasi, tingkat keparahan, dan durasi mangkrak</em>
+</p>
 
-  <img src="[URL_SCREENSHOT_4]" alt="Detail Laporan" width="800"/>
-  <p><em>Detail Laporan - Timeline verifikasi multi-agent</em></p>
-</div>
+<p align="center">
+  <img src="docs/screenshots/04-detail-laporan.png" alt="Detail Laporan" width="100%" />
+  <br />
+  <em>Detail Laporan — Informasi komprehensif kerusakan, alamat administratif, dan audit data verifikasi sistem</em>
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/05-transparansi.png" alt="Open Data dan Transparansi" width="100%" />
+  <br />
+  <em>Open Data & Transparansi — Dashboard akuntabilitas publik dan audit integritas 3 sumber data resmi</em>
+</p>
 
 ### Video Demo
 
