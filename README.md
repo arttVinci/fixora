@@ -1,18 +1,17 @@
-<div align="center">
+<p align="center">
+  <a href="https://fixora-frontend.pages.dev/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Site-10B981?style=for-the-badge&logo=cloudflarepages&logoColor=white" alt="Live Demo" /></a>
+  <a href="https://github.com/arttVinci/fixora-Frontend"><img src="https://img.shields.io/badge/Frontend-React_19-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="Frontend" /></a>
+  <a href="https://github.com/arttVinci/fixora-Backend"><img src="https://img.shields.io/badge/Backend-Go_1.25-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Backend" /></a>
+  <img src="https://img.shields.io/badge/AI-Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini AI" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
+</p>
 
-  # Fixora
-  ### Infrastructure Neglect Tracker — Pelacakan Akuntabilitas Infrastruktur Publik
+# Fixora — Infrastructure Neglect Tracker
 
-  [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-success?style=for-the-badge)](https://fixora-frontend.pages.dev/)
-  [![Frontend](https://img.shields.io/badge/GitHub-Frontend-181717?style=for-the-badge&logo=github)](https://github.com/arttVinci/fixora-Frontend)
-  [![Backend](https://img.shields.io/badge/GitHub-Backend-181717?style=for-the-badge&logo=github)](https://github.com/arttVinci/fixora-Backend)
-  [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+**Fixora** adalah platform open-source berbasis peta interaktif yang dirancang untuk melacak, memvisualisasikan, dan mendorong akuntabilitas terhadap kerusakan infrastruktur publik yang dibiarkan mangkrak di Indonesia.
 
-  **Open Source Platform Transparansi & Akuntabilitas Infrastruktur Publik Indonesia**
-
-  **By Saya Akan Lawan**
-
-</div>
+> _"Berapa lama jalan ini berlubang? Siapa yang bertanggung jawab? Apakah ada anggaran perbaikan?"_  
+> Fixora menjawab pertanyaan-pertanyaan ini dengan data terbuka, pelacakan durasi mangkrak, dan verifikasi AI multi-agent.
 
 ---
 
