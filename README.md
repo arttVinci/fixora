@@ -3,7 +3,7 @@
   # Fixora
   ### Infrastructure Neglect Tracker — Pelacakan Akuntabilitas Infrastruktur Publik
 
-  [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-success?style=for-the-badge)](https://fixora-frontend.pages.dev/)
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-success?style=for-the-badge)](https://fixora-frontend.pages.dev/)
   [![Frontend](https://img.shields.io/badge/GitHub-Frontend-181717?style=for-the-badge&logo=github)](https://github.com/arttVinci/fixora-Frontend)
   [![Backend](https://img.shields.io/badge/GitHub-Backend-181717?style=for-the-badge&logo=github)](https://github.com/arttVinci/fixora-Backend)
   [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
@@ -16,22 +16,22 @@
 
 ---
 
-## 📋 Daftar Isi
+## Daftar Isi
 
-- [Tim Developer](#-tim-developer)
-- [Tentang Proyek](#-tentang-proyek)
-- [Fitur Unggulan](#-fitur-unggulan)
-- [Demo & Screenshot](#-demo--screenshot)
-- [Teknologi](#-teknologi)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Instalasi & Setup](#-instalasi--setup)
-- [Penggunaan](#-penggunaan)
-- [API Documentation](#-api-documentation)
-- [Lisensi](#-lisensi)
+- [Tim Developer](#tim-developer)
+- [Tentang Proyek](#tentang-proyek)
+- [Fitur Unggulan](#fitur-unggulan)
+- [Demo & Screenshot](#demo--screenshot)
+- [Teknologi](#teknologi)
+- [Arsitektur Sistem](#arsitektur-sistem)
+- [Instalasi & Setup](#instalasi--setup)
+- [Penggunaan](#penggunaan)
+- [API Documentation](#api-documentation)
+- [Lisensi](#lisensi)
 
 ---
 
-## 👥 Tim Developer
+## Tim Developer
 
 | Nama | Peran | GitHub |
 |------|-------|--------|
@@ -40,7 +40,7 @@
 
 ---
 
-## 🎯 Tentang Proyek
+## Tentang Proyek
 
 ### Latar Belakang
 
@@ -56,13 +56,13 @@ Fixora mengisi celah ini dengan tiga diferensiasi kunci:
 
 ### Tujuan Proyek
 
-- 🎯 **Tujuan Utama**: Membangun platform *crowdsourced + AI-driven* yang memetakan masalah infrastruktur publik secara transparan dan akuntabel.
-- 📊 **Target Pengguna**: Warga umum, media/jurnalis data, aktivis, pemerintah daerah, dan kontributor open source.
-- 💡 **Value Proposition**: Platform yang tidak hanya menerima laporan, tapi aktif mencari isu lewat AI, melacak durasi masalah dibiarkan, dan mengkorelasikan lokasi laporan dengan data anggaran resmi.
+- **Tujuan Utama**: Membangun platform *crowdsourced + AI-driven* yang memetakan masalah infrastruktur publik secara transparan dan akuntabel.
+- **Target Pengguna**: Warga umum, media/jurnalis data, aktivis, pemerintah daerah, dan kontributor open source.
+- **Value Proposition**: Platform yang tidak hanya menerima laporan, tapi aktif mencari isu lewat AI, melacak durasi masalah dibiarkan, dan mengkorelasikan lokasi laporan dengan data anggaran resmi.
 
 ---
 
-## ✨ Fitur Unggulan
+## Fitur Unggulan
 
 ### Fitur Utama
 
@@ -83,11 +83,11 @@ Fixora mengisi celah ini dengan tiga diferensiasi kunci:
 
 ---
 
-## 📸 Demo & Screenshot
+## Demo & Screenshot
 
 ### Live Demo
 
-🔗 **[Kunjungi Website](https://fixora-frontend.pages.dev/)**
+**[Kunjungi Website](https://fixora-frontend.pages.dev/)**
 
 ### Screenshot Aplikasi
 
@@ -107,46 +107,79 @@ Fixora mengisi celah ini dengan tiga diferensiasi kunci:
 
 ### Video Demo
 
-📹 **[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
+**[Link Video Demo](https://[URL_VIDEO])** _(opsional)_
 
 ---
 
-## 🛠️ Teknologi
+## Teknologi
 
 ### Tech Stack
 
 #### Frontend
-```
-Framework    : React 19 + TypeScript 5
-Build Tool   : Vite 6
-UI Library   : Tailwind CSS 3
-Routing      : React Router 7
-Peta          : Leaflet + react-leaflet + MapLibre GL
-Animasi       : Framer Motion
-Ikon          : react-icons
-```
+
+![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript_5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite_6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router_7-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=for-the-badge&logo=leaflet&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+
+| Komponen | Teknologi | Keterangan |
+|----------|-----------|------------|
+| **Framework** | React 19 + TypeScript 5 | UI deklaratif dengan type-safety ketat |
+| **Build Tool** | Vite 6 | Lightning-fast HMR & optimasi build modern |
+| **Styling** | Tailwind CSS 3 | Utility-first CSS framework responsif |
+| **Routing** | React Router 7 | Client-side routing SPA |
+| **Peta Interaktif** | Leaflet + React-Leaflet + MapLibre GL | Visualisasi spasial, marker clustering & tile layer |
+| **Animasi** | Framer Motion | Transisi halaman halus & mikro-interaksi dinamis |
+| **Ikon** | React Icons | Icon library komprehensif |
 
 #### Backend
-```
-Runtime      : Go 1.25
-Framework    : Fiber v2
-Database     : MySQL 8.0
-ORM          : GORM v1
-AI/LLM        : Google Gemini (vision + extraction) + CommandCode (qwen)
-Scheduler    : robfig/cron v3
-Validasi      : go-playground/validator
-Config        : Viper
-Logging       : Logrus
-Storage Foto  : Cloudinary
-Geocoding     : Nominatim (OpenStreetMap)
-```
+
+![Go](https://img.shields.io/badge/Go_1.25-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Fiber](https://img.shields.io/badge/Fiber_v2-00ACD7?style=for-the-badge&logo=go&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL_8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![GORM](https://img.shields.io/badge/GORM-7B68EE?style=for-the-badge&logo=go&logoColor=white)
+
+| Komponen | Teknologi | Keterangan |
+|----------|-----------|------------|
+| **Runtime & Bahasa** | Go (Golang) 1.25 | Kompilasi native, concurrency tinggi, footprint memori minimal |
+| **Web Framework** | Fiber v2 | HTTP framework performa tinggi berbasis Fasthttp |
+| **Database** | MySQL 8.0 | Penyimpanan relasional untuk hierarki wilayah & data laporan |
+| **ORM** | GORM v1 | Object-Relational Mapping, relasi multi-tabel & auto-migration |
+| **Scheduler** | robfig/cron v3 | Background cron scheduler untuk crawling berita otomatis |
+| **Validasi** | go-playground/validator | Validasi data input payload DTO |
+| **Konfigurasi** | Viper | Manajemen konfigurasi environment variables & JSON |
+| **Logging** | Logrus | Structured logging untuk audit trail & operational debugging |
+
+#### AI & External Services
+
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![CommandCode](https://img.shields.io/badge/CommandCode_Qwen-20232A?style=for-the-badge&logo=openai&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+![Nominatim](https://img.shields.io/badge/Nominatim_OSM-7EBC6F?style=for-the-badge&logo=openstreetmap&logoColor=white)
+
+| Layanan | Provider / Tools | Peran dalam Sistem |
+|---------|------------------|-------------------|
+| **Multimodal Vision** | Google Gemini (Gemini 2.5 Flash) | Auto-klasifikasi kategori & keparahan foto kerusakan |
+| **Multi-Agent Verifier** | CommandCode (Qwen) + Gemini | Pipeline multi-agent (Advocate, Skeptic, Manager) untuk validasi laporan |
+| **Media Storage** | Cloudinary | CDN & hosting foto laporan kerusakan infrastruktur |
+| **Geocoding** | Nominatim (OpenStreetMap) | Resolusi koordinat GPS ke alamat wilayah administratif |
 
 #### DevOps & Tools
-```
-Deployment   : Docker + Docker Compose
-API Docs     : Swagger (swaggo)
-Dependency   : Go modules / npm
-```
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-1D63ED?style=for-the-badge&logo=docker&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+| Tool | Kategori | Kegunaan |
+|------|----------|----------|
+| **Docker** | Containerization | Packaging aplikasi ke dalam container terisolasi |
+| **Docker Compose** | Multi-Container Setup | Menjalankan backend & database MySQL dalam satu perintah |
+| **Swagger (Swaggo)** | API Documentation | Dokumentasi interaktif OpenAPI di `/swagger/` |
+| **Git & GitHub** | Version Control | Kolaborasi tim, code review & version tracking |
 
 ### Alasan Pemilihan Teknologi
 
@@ -190,7 +223,7 @@ github.com/mmcdole/gofeed             v1.4.0
 
 ---
 
-## 🏗️ Arsitektur Sistem
+## Arsitektur Sistem
 
 Backend Fixora dibangun dengan pendekatan **Modular Monolith** (bukan microservices). Seluruh fitur berada dalam satu binary Go yang di-deploy sebagai satu proses, namun dipisahkan secara ketat menjadi modul-modul berdomain sendiri.
 
@@ -287,7 +320,7 @@ erDiagram
     verification_sessions ||--o{ verification_logs : "logged"
 ```
 
-> 📖 Lihat skema lengkap di [`backend-Fixora/docs/DATABASE-SCHEMA.md`](backend-Fixora/docs/DATABASE-SCHEMA.md).
+> Lihat skema lengkap di [`backend-Fixora/docs/DATABASE-SCHEMA.md`](backend-Fixora/docs/DATABASE-SCHEMA.md).
 
 ### Folder Structure
 
@@ -318,121 +351,32 @@ fixora/
 
 ---
 
-## ⚙️ Instalasi & Setup
+## Instalasi & Setup
 
-### Prerequisites
+Proyek Fixora terbagi ke dalam dua repositori utama: **Backend** (API & Multi-Agent AI Service) dan **Frontend** (Aplikasi Web Interaktif). Seluruh instruksi instalasi lengkap, konfigurasi berkas `.env`/`config.json`, migrasi database, dan petunjuk troubleshooting dirawat langsung di repositori masing-masing:
 
-Pastikan Anda telah menginstall:
-- **Docker & Docker Compose** (untuk backend + MySQL)
-- **Node.js** (v18 atau lebih tinggi) + **npm** (untuk frontend)
-- **Go** 1.25+ (opsional, jika menjalankan backend tanpa Docker)
-- **Git**
+| Komponen | Repositori | Panduan Setup | Deskripsi Singkat |
+|----------|------------|---------------|-------------------|
+| **Backend** | [`arttVinci/fixora-Backend`](https://github.com/arttVinci/fixora-Backend) | [README Backend](backend-Fixora/README.md) | Go 1.25, Fiber v2, Docker Compose, MySQL 8, migrasi database, dan konfigurasi API key AI (Gemini / Cloudinary) |
+| **Frontend** | [`arttVinci/fixora-Frontend`](https://github.com/arttVinci/fixora-Frontend) | [README Frontend](frontend-Fixora/README.md) | React 19, Vite, TypeScript, Tailwind CSS, Leaflet Map, dan konfigurasi base URL API |
 
-### Langkah Instalasi
+### Quick Start (Clone Repositori Monorepo)
 
-#### 1️⃣ Clone Repository
-
-```bash
-# Frontend
-git clone https://github.com/arttVinci/fixora-Frontend.git
-
-# Backend
-git clone https://github.com/arttVinci/fixora-Backend.git
-```
-
-#### 2️⃣ Setup Backend
+Jika Anda ingin mengklon repositori utama ini beserta seluruh submodulnya sekaligus:
 
 ```bash
-cd fixora-Backend
-
-# Salin template konfigurasi
-cp .env.example .env
-cp config.json.example config.json
+# Clone repositori utama beserta seluruh submodule
+git clone --recurse-submodules https://github.com/arttVinci/fixora.git
+cd fixora
 ```
 
-Isi `config.json` dengan kredensial database, API key Gemini, LLM provider, dan Cloudinary:
-
-```json
-{
-  "database": {
-    "username": "db_user",
-    "password": "database_password",
-    "host": "fixora_mysql",
-    "port": 3306,
-    "name": "database_name"
-  },
-  "google_ai_studio": {
-    "api_key": "YOUR_GEMINI_API_KEY"
-  },
-  "llm_provider": {
-    "base_url": "https://api.commandcode.at/completions",
-    "api_key": "YOUR_LLM_PROVIDER_API_KEY"
-  },
-  "cloudinary": {
-    "cloud_name": "your_cloudinary_cloud_name",
-    "api_key": "your_cloudinary_api_key",
-    "api_secret": "your_cloudinary_api_secret"
-  }
-}
-```
-
-#### 3️⃣ Jalankan Backend + Database (Docker)
-
-```bash
-docker compose up --build -d
-```
-
-Backend berjalan di `http://localhost:8080`, dan auto-migrate + auto-seed wilayah & kategori saat start.
-
-#### 4️⃣ Setup & Jalankan Frontend
-
-```bash
-cd ../fixora-Frontend
-
-# Install dependencies
-npm install
-
-# Salin environment
-cp .env.example .env
-```
-
-Isi `.env`:
-
-```env
-VITE_API_BASE_URL=http://localhost:8080/api
-```
-
-Jalankan development server:
-
-```bash
-npm run dev
-```
-
-Frontend berjalan di `http://localhost:5173` (proxy `/api` ke backend dikonfigurasi di `vite.config.ts`).
+Setelah repositori terklon, buka panduan di masing-masing direktori:
+- **Setup Backend**: Buka direktori `backend-Fixora/` lalu ikuti panduan di [`backend-Fixora/README.md`](backend-Fixora/README.md).
+- **Setup Frontend**: Buka direktori `frontend-Fixora/` lalu ikuti panduan di [`frontend-Fixora/README.md`](frontend-Fixora/README.md).
 
 ---
 
-## 🚀 Penggunaan
-
-### Menjalankan Aplikasi
-
-```bash
-# Frontend - development mode
-npm run dev
-
-# Frontend - production build
-npm run build
-npm run preview
-
-# Frontend - linting
-npm run lint
-
-# Backend - tanpa Docker
-cd fixora-Backend && go run ./cmd/web/main.go
-
-# Backend - dengan Docker
-docker compose up --build -d
-```
+## Penggunaan
 
 ### User Guide
 
@@ -459,7 +403,7 @@ docker compose up --build -d
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 ### Base URL
 
@@ -527,11 +471,11 @@ const report = await fetch('/api/reports/', {
 });
 ```
 
-📖 **Dokumentasi API lengkap (Swagger)**: jalankan backend lalu buka `http://localhost:8080/swagger/`, atau lihat [`backend-Fixora/docs/swagger.yaml`](backend-Fixora/docs/swagger.yaml).
+**Dokumentasi API lengkap (Swagger)**: jalankan backend lalu buka `http://localhost:8080/swagger/`, atau lihat [`backend-Fixora/docs/swagger.yaml`](backend-Fixora/docs/swagger.yaml).
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE untuk detail lebih lanjut.
 
@@ -539,7 +483,6 @@ Proyek ini dilisensikan di bawah [MIT License](LICENSE) - lihat file LICENSE unt
 
 <div align="center">
 
-  **Made with ❤️ by Saya Akan Lawan**
-
+  **Fixora — Platform Transparansi & Akuntabilitas Infrastruktur Publik**
 
 </div>
